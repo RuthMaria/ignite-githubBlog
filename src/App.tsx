@@ -1,7 +1,15 @@
-import { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle } from './styles/global';
+import { defaultTheme } from './styles/themes/default';
 
-function App() {
-  return <h1>oi</h1>;
-}
-
-export default App;
+/*
+ThemeProvider => aplica as cores em todos os componentes da aplicação
+*/
+export const App = () => {
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <h1>oi</h1>
+      <GlobalStyle />
+    </ThemeProvider>
+  );
+};
