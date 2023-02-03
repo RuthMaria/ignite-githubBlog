@@ -1,14 +1,20 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-  gap: 32px;
-  padding: 32px 40px;
-  background-color: ${(props) => props.theme['base-profile']};
-  border-radius: 10px;
-  box-shadow: 0 2px 28px rgba(0, 0, 0, 0.2);
-  margin-top: -90px;
-  position: absolute;
+  width: 100%;
+  max-width: 864px;
+  margin: 0 auto;
+
+  > div {
+    display: flex;
+    gap: 32px;
+    padding: 32px 40px;
+    background-color: ${(props) => props.theme['base-profile']};
+    border-radius: 10px;
+    box-shadow: 0 2px 28px rgba(0, 0, 0, 0.2);
+    margin-top: -90px;
+    position: absolute;
+  }
 `;
 
 export const Img = styled.img`
