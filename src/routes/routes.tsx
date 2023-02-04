@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home } from '../pages/Home/Home';
+import { Home, Post } from '../pages';
 
 export function AppRoutes() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/teste" element={<h1>teste</h1>} />
+        <Route path="/description/:number" element={<Post />} />
       </Routes>
     </Router>
   );

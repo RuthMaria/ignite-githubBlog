@@ -5,9 +5,11 @@ import { Header, Search, Card } from './components';
 
 import cover from '../../assets/cover.svg';
 
-import { Container, Publications } from './Home.styles';
+import { Container, Publications, Main } from './Home.styles';
 
-interface Issue {
+export interface Issue {
+  id: number;
+  number: number;
   title: string;
   created_at: string;
   body: string;
@@ -21,6 +23,7 @@ interface UserIssues {
 export const Home: React.FC = () => {
   const [query, setQuery] = useState('');
   const [issues, setIssues] = useState<UserIssues>();
+  const [loading, setLoading] = useState(true);
 
   const hasQuery = (query: string) => {
     setQuery(query);
@@ -34,15 +37,14 @@ export const Home: React.FC = () => {
         },
       });
 
-      setIssues(response);
+      setIssues(response.data);
       setQuery('');
+      setLoading(false);
     };
 
     loadingIssues();
-  }, [query, issues]);
-
+  }, []);
   console.log(issues);
-
   const getIssuesCount = () => {
     const issuesCount = issues?.total_count | 0;
 
@@ -63,8 +65,11 @@ export const Home: React.FC = () => {
           <span>{getIssuesCount()}</span>
         </Publications>
         <Search hasQuery={hasQuery} />
-
-        <Card />
+        <Main>
+          {issues?.items?.map((issue) => {
+            return <Card key={issue.id} issue={issue} />;
+          })}
+        </Main>
       </section>
     </Container>
   );
