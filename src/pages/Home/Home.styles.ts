@@ -9,6 +9,7 @@ export const Container = styled.div`
     width: 100%;
     max-width: 864px;
     margin: 0 auto;
+    margin-bottom: 234px;
   }
 `;
 

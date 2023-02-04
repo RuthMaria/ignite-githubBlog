@@ -1,5 +1,4 @@
 import React from 'react';
-// import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import { formateDate } from '../../../../utils/formateDate';
 import { Issue } from '../../Home';
@@ -22,7 +21,6 @@ export const Card: React.FC<Cardprop> = ({ issue }) => {
         </Title>
 
         <Content>{issue.body.slice(0, 150)}...</Content>
-        {/* <ReactMarkdown>{issue.body}</ReactMarkdown> */}
       </Link>
     </Container>
   );

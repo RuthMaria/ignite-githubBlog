@@ -23,28 +23,27 @@ interface UserIssues {
 export const Home: React.FC = () => {
   const [query, setQuery] = useState('');
   const [issues, setIssues] = useState<UserIssues>();
-  const [loading, setLoading] = useState(true);
 
   const hasQuery = (query: string) => {
     setQuery(query);
+    loadingIssues(query);
+  };
+
+  const loadingIssues = async (query: string) => {
+    const response = await api.get('/search/issues', {
+      params: {
+        q: `${query}repo:RuthMaria/ignite-githubBlog`,
+      },
+    });
+
+    setIssues(response.data);
+    setQuery('');
   };
 
   useEffect(() => {
-    const loadingIssues = async () => {
-      const response = await api.get('/search/issues', {
-        params: {
-          q: `${query}repo:RuthMaria/ignite-githubBlog`,
-        },
-      });
-
-      setIssues(response.data);
-      setQuery('');
-      setLoading(false);
-    };
-
-    loadingIssues();
+    loadingIssues(query);
   }, []);
-  console.log(issues);
+
   const getIssuesCount = () => {
     const issuesCount = issues?.total_count | 0;
 
@@ -64,7 +63,9 @@ export const Home: React.FC = () => {
           <p>Publicações</p>
           <span>{getIssuesCount()}</span>
         </Publications>
+
         <Search hasQuery={hasQuery} />
+
         <Main>
           {issues?.items?.map((issue) => {
             return <Card key={issue.id} issue={issue} />;
