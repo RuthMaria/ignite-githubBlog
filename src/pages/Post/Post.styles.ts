@@ -1,34 +1,35 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100%;
-  max-width: 864px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 
   > div {
-    display: flex;
-    gap: 32px;
+    width: 100%;
+    max-width: 864px;
     padding: 32px 40px;
     background-color: ${(props) => props.theme['base-profile']};
     border-radius: 10px;
     box-shadow: 0 2px 28px rgba(0, 0, 0, 0.2);
-    margin-top: -260px;
+    margin-top: -90px;
     position: absolute;
+  }
+
+  section {
+    width: 100%;
+    max-width: 864px;
+    margin-top: 90px;
+    padding: 32px 40px;
+    color: ${(props) => props.theme['base-text']};
   }
 `;
 
-export const Img = styled.img`
-  max-width: 148px;
-  max-height: 148px;
-  border-radius: 8px;
-`;
-
-export const Title = styled.div`
+export const Nav = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
-  a {
+  a,
+  button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,6 +38,7 @@ export const Title = styled.div`
     font-size: 0.75rem;
     line-height: 1.2rem;
     color: ${(props) => props.theme['blue']};
+    background: transparent;
 
     &:hover {
       border-bottom: 1px solid ${(props) => props.theme['blue']};
@@ -48,24 +50,13 @@ export const Title = styled.div`
   }
 `;
 
-export const Name = styled.p`
+export const Title = styled.p`
   font-weight: 700;
   font-size: 1.5rem;
   color: ${(props) => props.theme['base-title']};
   line-height: 1.95rem;
-`;
-
-export const Bio = styled.p`
-  font-weight: 400;
-  font-size: 1rem;
-  color: ${(props) => props.theme['base-text']};
-  line-height: 1.6rem;
-  width: 650px;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
-  margin-top: 8px;
-  margin-bottom: 24px;
+  margin-top: 20px;
+  margin-bottom: 8px;
 `;
 
 export const Icon = styled.img`
@@ -88,6 +79,6 @@ export const Group = styled.div`
 export const Span = styled.span`
   font-weight: 400;
   font-size: 1rem;
-  color: ${(props) => props.theme['base-subtitle']};
+  color: ${(props) => props.theme['base-span']};
   line-height: 1.6rem;
 `;

@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { api } from '../../lib/axios';
 import { Header, Search, Card } from './components';
 
-import cover from '../../assets/cover.svg';
-
 import { Container, Publications, Main } from './Home.styles';
 
 export interface Issue {
@@ -54,8 +52,6 @@ export const Home: React.FC = () => {
 
   return (
     <Container>
-      <img src={cover} alt="" />
-
       <Header />
 
       <section>

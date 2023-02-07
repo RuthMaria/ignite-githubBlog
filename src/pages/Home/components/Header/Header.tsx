@@ -33,13 +33,13 @@ export const Header: React.FC = () => {
   const [user, setUser] = useState<User>();
 
   useEffect(() => {
-    async function getUserGithub() {
+    async function loadingUserGithub() {
       const response = await api.get('/users/RuthMaria');
 
       setUser(response.data);
     }
 
-    getUserGithub();
+    loadingUserGithub();
   }, []);
 
   return (
