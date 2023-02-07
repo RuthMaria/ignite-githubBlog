@@ -37,4 +37,9 @@ export const Main = styled.main`
   gap: 32px;
   margin-top: 48px;
   width: 900px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;

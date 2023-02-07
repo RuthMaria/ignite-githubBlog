@@ -17,30 +17,4 @@ export const Container = styled.form`
       color: ${(props) => props.theme['base-label']};
     }
   }
-
-  button {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    border: 0;
-    padding: 1rem;
-    background: transparent;
-    border: 1px solid ${(props) => props.theme['blue']};
-    color: ${(props) => props.theme['blue']};
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-
-    &:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    &:not(:disabled):hover {
-      background: ${(props) => props.theme['blue']};
-      border-color: ${(props) => props.theme['blue']};
-      color: ${(props) => props.theme['base-text']};
-      transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-    }
-  }
 `;

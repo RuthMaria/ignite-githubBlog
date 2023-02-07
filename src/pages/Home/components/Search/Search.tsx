@@ -16,11 +16,7 @@ interface SearchProps {
 }
 
 export const Search: React.FC<SearchProps> = ({ hasQuery }) => {
-  const {
-    register,
-    handleSubmit,
-    formState: { isSubmitting },
-  } = useForm<SearchFormInputs>({
+  const { register, handleSubmit } = useForm<SearchFormInputs>({
     resolver: zodResolver(searchSchema),
   });
 
@@ -31,10 +27,6 @@ export const Search: React.FC<SearchProps> = ({ hasQuery }) => {
   return (
     <Container onSubmit={handleSubmit(handleSearchTransactions)}>
       <input type="text" placeholder="Buscar conteúdo" {...register('query')} />
-
-      <button type="submit" disabled={isSubmitting}>
-        Buscar
-      </button>
     </Container>
   );
 };

@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Logo Repository" src="./src/assets/logo.svg" width="300px" />
+    <img alt="Logo Repository" src="./src/assets/logo.svg" width="200px" />
 </h1>
 
 <p align="center">
@@ -24,6 +24,12 @@
 
 <a id="execution"></a><br>
 
+- My profile listing with image, number of followers, name and other information provided by the GitHub API.
+- List and filter all issues in my repository with a short summary of their content
+- Creating a page to display a complete post (issue)
+
+<br>
+
 ## :tv: Preview
 
 ![video](./src/assets/video.gif)
@@ -36,13 +42,12 @@ Access this layout in [Figma](<https://www.figma.com/file/JWAnRsIahzK1FSPDHlQkj7
 
 - Zod
 - env
-- Intl
 - HTML5
+- Date fns
 - React.js
-- Radix-ui
 - TypeScript
-- JSON-server
-- Phosphor Icons
+- API do GitHub
+- React markdown
 - React hook form
 - Styled components
 
